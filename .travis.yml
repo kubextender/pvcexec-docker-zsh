@@ -1,0 +1,17 @@
+sudo: required
+language: go
+
+go:
+  - 1.11.x
+
+services:
+  - docker
+
+script:
+  - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_USER" --password-stdin
+
+deploy:
+  provider: script
+  script: ./docker_push.sh
+  on:
+    branch: master
