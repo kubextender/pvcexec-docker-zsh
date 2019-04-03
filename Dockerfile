@@ -6,7 +6,7 @@ RUN apk update && apk add libressl git zsh nano vim curl rsync
 ENV TERM xterm
 
 # set the zsh theme
-ENV ZSH_THEME agnoster
+ENV ZSH_THEME obraun
 
 # run the installation script
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
